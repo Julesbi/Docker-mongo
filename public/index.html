@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Student Form</title>
+    <style>
+      form {
+        width: 500px;
+        margin: 50px auto;
+        text-align: center;
+        background-color: #e6f2ff;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      label {
+        font-weight: bold;
+        font-size: 16px;
+        display: inline-block;
+        width: 40%;
+        text-align: left;
+        color: #336699;
+      }
+      input[type="text"] {
+        width: 50%;
+        height: 30px;
+        font-size: 14px;
+        padding: 5px;
+        display: inline-block;
+        border-radius: 10px;
+        border: 1px solid #336699;
+      }
+
+   input[type="button"]:hover {
+    background-color: #336699;
+    color: white;
+    cursor: pointer;
+} 
+input[type="submit"]:hover {
+    background-color: #336699;
+    color: white;
+    cursor: pointer;
+} 
+
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center; color: #336699; margin-top: 50px;">Student Form</h1>
+    <form class="container" method = "post" action="/">
+      <label>Name:</label>
+      <input type="text" name="name"><br><br>
+      <label>AndrewID:</label>
+      <input type="text" name="andrewID"><br><br>
+      <label>Course:</label>
+      <input type="text" name="course"><br><br>
+      <label>Grade:</label>
+      <input type="text" name="grade"><br><br>
+      <input type="submit" value="Submit" style="width: 40%; height: 40px; background-color: lightblue; color: #336699; font-size: 18px; border: none; border-radius: 10px; margin: 20px 10px 20px 10px; display: inline-block;">
+      <a href="http://localhost:5000/grades">
+      <input type = "button" value="Grades Info" style="width: 40%; height: 40px; background-color: lightblue; color: #336699; font-size: 18px; border: none; border-radius: 10px; margin: 20px 10px 20px 10px; display: inline-block;">
+    </a>
+    </form>
+  </body>
+</html>
+

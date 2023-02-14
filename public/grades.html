@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 60%;
+        margin: 50px auto;
+        text-align: center;
+        border: 2px solid blue;
+        border-radius: 10px;
+      }
+
+      th, td {
+        border: 1px solid blue;
+        padding: 8px;
+      }
+
+      th {
+        background-color: lightblue;
+      }
+      input[type="button"] {
+        width: 80px;
+        height: 40px;
+        background-color: lightblue;
+        color: #336699;
+        font-size: 18px;
+        border: none;
+        border-radius: 10px;
+        margin: 20px 10px 20px 10px;
+        display: inline-block;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="student-table">
+      <tr>
+        <th>Student Name</th>
+        <th>Course</th>
+        <th>Grade</th>
+      </tr>
+    </table>
+    <input type="button" value="Back" onclick="window.history.back()">
+
+    <script>
+      // Fetch the data from the API endpoint
+      fetch('http://localhost:5000/all-students')
+        .then(response => response.json())
+        .then(data => {
+          // Get the table
+          const table = document.getElementById('student-table');
+
+          // Loop through the data and add a new row for each student
+          data.forEach(student => {
+            // Check if the name and grade are not empty
+            if (student.name !== "" && student.grade !== "" && student.course !== ""  ) {
+              // Create a new row
+              const row = table.insertRow();
+
+              // Create cells for the name and grade
+              const nameCell = row.insertCell();
+              const coursecell = row.insertCell();
+              const gradeCell = row.insertCell();
+
+              // Set the cell contents to the student name and grade
+              nameCell.innerHTML = student.name;
+              coursecell.innerHTML = student.course;
+              gradeCell.innerHTML = student.grade;
+            }
+          });
+        });
+    </script>
+  </body>
+</html>
